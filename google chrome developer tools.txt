@@ -1,0 +1,1 @@
+open dev tools=>f12 or cntr+shift+i or go to three dots then more tools then dev tools

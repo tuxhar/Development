@@ -1,0 +1,86 @@
+#Define=jQuery is a lightweight (write-less do-more) Javascript library.
+It simplifys javascript programming.
+
+#features=>
+	1.HTML/DOM manipulation
+	2.Css manipulation
+	3.HTML event method
+	4.Ajax
+	5.Utilities and Plugins
+	6.cross-browser compatible
+
+#It has two versions
+1.production version=minified and compressed
+2.development version=uncompressed and readable
+
+
+#Note:-you need to download it or use CDN(content delivery network).
+CDN is faster and reduce load on http request but
+when we host website on server CDN blocked By firewall of users.
+to solve this problem do this.
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+window.jQuery || document.write("<script src='your downloaded jquery link'><\/script>");
+</script>
+
+#Note:always put jQuery file in bottom of the body
+and load all js file after that
+
+#Basic Syntax=>$(selector).action();
+
+#Basic Keywords=>
+$=jQuery
+document=webpage
+this=current element
+
+#this prevents any function to load before html dom
+	$(document).ready(function(){
+		
+	});
+	OR
+	$(function(){
+		
+	});
+#Selector
+  1) $("*") = for all element
+  2) $("#idname") = for id
+  3) $(".classname") = for class
+  4) $("p") = for all p element
+  5) $("p .classname") =all p element that has a class classname
+  6) $("p:first") =first p element
+  7) $("p:last") =last p element
+  8) $("input[type='text']") =use [] for selection of attribute
+
+#Event
+NOTE:=>1)always use function() in event 
+2)we can use two functions() as well in single event by using ,
+3)we can also use multiple event on a single element
+$("p").on({
+	click:function(){
+	  $(this).hide();
+	},
+	dblclick:function(){
+	  $(this).show();
+	},
+	hover:function(){
+	  $(this).toggle();
+	},
+});
+ *mouse event
+   click(function(){});
+   dblclick(function{});
+   mouseenter(function(){});
+   mouseleave(function(){});
+   mousedown(function(){});
+   mouseup(function(){});
+   hover(function(){});
+
+ *form event
+   focus(function(){});
+   blur(function(){});  
+#METHOD
+1)hide(speed,callback);/show(speed,callback);/toggle(speed,callback);
+	speed in millisecond,slow,fast,none
+	callback is optional   
+2)fadeIn(speed,callback);/fadeOut(speed,callback);/fadetoggle(speed,callback);/fadeTo(speed,callback,opacity);	

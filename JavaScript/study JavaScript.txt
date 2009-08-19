@@ -1,6 +1,84 @@
-Object in general sense = It is thing that we can see Or touch
-  It has characteristic and action that it can perform
-Similarly In programming world
+#LiveScript=EcmaScript=JavaScript
+    It is a light weight,open source client side scripting language.
+
+#Feature OR Uses
+    1)It is used to create dynamic web page
+    2)we can create richer client side interface by using javascript.
+    3)javascript can be use for security propuse and validation.
+    4)javascript can be use to fetch user information. 
+
+#Advantages
+ less server interaction
+ immediate feedback to user
+ richer interface
+
+#Java VS JavaScript
+	1)java is a programming language while javascript is a scripting language
+	2)javascript runs on browser while java runs on jvm machine OR browser as well
+	3)javascript is not that complicated but java is complicated and strict
+	4)javascript is used to create dynamic web page where as java is used to create standalone application
+#internal and external linking
+    internal = we can use anywhere in html code
+    external = 
+#variable=it is a container of value
+  Rules=>1)we do not use any special character except underscore
+         2)we do not use any number in front
+         3)we reserve keyword var in front of it
+         e.g var x=4,y=5,z="tushar"; 
+   Note:=>we can categories variable into two different scope
+   local = if we define a variable in a function then we cannot access outside of that function
+   global = we can access it anywhere in the script 
+#function = reusable code block
+  1)predefined function
+  2)user defined function
+  function say(para1,para2..){
+
+  }
+  say(argu1,argu2..);         	  
+#comment
+	//this is single line comment
+	/*this is multi line 
+	comment*/
+#Dialog Box
+	1)alert("hello");
+	2)confirm("are you ready to delete this"); //it returns two boolean values
+	3)prompt(); //it is used to get user input as string
+Note:if you want to get insert integer value then write
+   parseInt(prompt("enter first number"));
+#There are four ways to display a variable:
+var person = "John Doe";
+	document.getElementById("demo").innerHTML = person;
+	document.write(person);   //  for testing
+	console.log(person);     // for debugging
+	window.alert(person);   // to popup
+#Condition Statement
+	1)if{}
+	2)if{} else{}
+	3)if{}else if{}else{}
+	4)switch case
+#break and continue
+  break = Exit the loop
+  continue = not run the condition after that it will continue
+#loop
+	1)for(){}
+	2)while{}
+	3)do while{}  	
+NOTE:->In JavaScript almost everything is Object except Primitives.
+primitive values are those that does not have property and method.
+primitive DataType that has a primitive value.
+	1)Number
+	2)String
+	3)Boolean
+	4)Null
+	5)Undefined
+Note=> Primitive DataType are immutable but object are mutable
+#OBJECT=>
+	Object in general sense = It is thing that we can see Or touch
+	  It has characteristic and action that it can perform
+	Similarly In programming world
+	It is a variable that has properties and methods.
+	  properties=> It is collection of name and value
+      methods=> methods are action that performed on object.
 
 There are two types of Objects
 1)In Build that we can access its methos by using . operator

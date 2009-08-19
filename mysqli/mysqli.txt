@@ -22,24 +22,36 @@ varvhar(length)  s+1      0 to 65535
 		name varchar(10) NOT null,
 		PRIMARY key(id)
 	);
-#show table in a particular table
+#show table in a particular database
     SHOW TABLES;
 #show columns of table
     SHOW COLUMNS FROM table_name;
 #select all from table
-    SELECT * FROM table_name;
+    SELECT * FROM table_name;        
 #select particular fields
-    SELECT first_name FROM books;
-    SELECT last_name FROM books;
-	OR
     SELECT first_name,last_name FROM table_name;
 #select on condition
     SELECT first_name,last_name FROM `books` WHERE id = 2; //use '' for string value
-#operator in select operation
- for range by where use between and
-    SELECT first_name,last_name FROM `books` WHERE id BETWEEN 2 AND 4;
- multiple where by using and
-    select first_name FROM books WHERE last_name='yadav' AND id=1; 
+#Having vs where
+	having clause filters a group of row while where clase filter a single row	
+NoTe:-having clause always uses with group_by
+	Select sum(price) AS new_price FROM tablename group_by id having id=1;	
+#UNION = to combile two or more select statement with distinct value
+  Rules=>
+  1)same number of columns in both the statement
+  2)same datatype in both the statement
+ NOTE:=>UNION ALL to get all values 
+#Operator in select operation
+ 1)BETWEEN AND = for range  //we can also use NOT before BETWEEN
+    SELECT first_name,last_name FROM `books` WHERE id BETWEEN 2 AND 4; 
+ 2)AND = multiple condition
+    select first_name FROM books WHERE last_name='yadav' AND id=1;
+ 3)OR = either or  
+    select * from demo where id=3 OR fname="tushar"; 
+ 4)IN = It checks wheater the value is in list  //we can also use NOT before IN
+    SELECT * FROM `demo` WHERE id IN(4,3);  
+ 5)IS NULL  // you can use IS NOT NULL as well
+    SELECT * FROM `demo` WHERE fname IS NULL;  
 #DISTINCT=for unique or non repeated
 	SELECT DISTINCT first_name,last_name FROM table_name;
 #LIMIT
@@ -61,5 +73,36 @@ varvhar(length)  s+1      0 to 65535
     SELECT CONCAT(first_name,',',last_name) AS NEW_FIELD FROM books;
 	or
 	SELECT first_name,last_name,price,price-1 as new_field FROM `books`;
-
-	
+#FUNCTIONS
+  COUNT(),SUM(),MAX(),MIN(),UPPER();AVG();SQRT();LENGHT();CURDATE();CURTIME();DATE_FORMAT("2019.02.11","%d,%m,%y");
+  SELECT COUNT(id) FROM demo; 
+#ALTER = to modify
+  AlTER TABLE demo ADD dateofbirth date;
+  ALTER TABLE demo DROP COLUMN dateofbirth;
+#DROP =to delete
+  DROP TABLE tablename;  
+#RENAME 
+  RENAME TABLE tablename to change_tablename;  
+#INSERT
+  INSERT INTO demo(fname,lname) VALUES("sonu","monu");	
+#INSERT MULTIPLE ROWS
+  INSERT INTO demo(fname,lname) VALUES("tus","ach"),("hsd","sds"); 
+#DELETE
+  DELETE FROM demo WHERE id=15;
+#UPDATE
+  UPDATE demo SET fname="tush" WHERE id="1";  
+#JOINS
+ INNER JOIN = fetch data which is in both table
+ RIGHT JOIN = fetch all field from right table
+ LEFT JOIN = fetch all field from left table 
+#Constraint = Constranint restrict user to apply changes in database
+and it's provides consistency to the database
+There are 6 type of Constraint   
+1)NOT NULL = It doesn't take empty values
+2)UNIQUE = It takes different value and 
+we can assign it on single columns OR composite columns in a table
+3)PRIMARY = It takes not null value that is unique
+we can assign it on single columns OR composite columns in a table
+4)FOREIGN = 
+NOTE:-we cannot add multiple primary key in a table but in case of foreign key 
+we can add multiple.

@@ -1,0 +1,2 @@
+HTML => hypertext markup language is used to create skeleton of web pages.
+#<!DOCTYPE html> it tells browser that what type of version we are using in html.

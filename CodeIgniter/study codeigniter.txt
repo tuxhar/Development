@@ -1,0 +1,3 @@
+# defined('BASEPATH') OR exit('you cannot access the controller directly');
+# $this = $this keyword is used for self referencing purpose and it's point to current object 
+#redirect('admin/index'); to go from one page to another
