@@ -1,0 +1,24 @@
+What is URL rewriting?
+http get=>http://www.domain.com/product.php?id=40&price=200
+clean url=>http://www.domain.com/product/40
+
+create .htaccess file in your folder filename as ".htaccess"
+and write these instruction their
+RewriteEngine On
+RewriteBase /Projectname/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,L] 
+
+.htaccess=it is a hidden file
+
+#Explicitly Remove Index.php
+Index.php=>whatever the request from userside wherther it is controller/method it must be go through the index.php
+
+1)first check rewrite module is enable from xampp control panel->config->httpd.conf  OR xampp->apache->conf->httpd.conf
+2)create .htaccess file in your folder filename as ".htaccess"
+and write these instruction their
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L]

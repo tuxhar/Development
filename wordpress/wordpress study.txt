@@ -1,0 +1,19 @@
+wordpress is a cms(content management system) based on php and used to build dynamic websites and blogs
+Note=>for wordpress firstly we will have to install php server.
+
+#Download=>
+1)download wordpress from wordpress.org and paste it in htdocs
+2)create wordpress database in localhost/phpmyadmin
+3)type localhost/wordpress in a browser and run the installation
+
+#for login type http://localhost/wordpress/wp-admin/
+
+
+#Dashboard=
+1)we can easily drag and drop options in dashboard and remove from screen options
+
+
+#post
+there is a default hello world post
+1)add post
+

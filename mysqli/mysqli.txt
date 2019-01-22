@@ -1,0 +1,65 @@
+#sql vs mysql
+sql is a standard language and mysql is an database management system
+
+#rdbms
+
+#database
+#char vs varchar
+  CHAR is used for Fixed Length Size Variable
+  while
+  VARCHAR is used for Variable Length Size Variable.
+#data types
+types            bytes    description
+CHAR(length)     length   0 to 255
+varvhar(length)  s+1      0 to 65535
+#show databases
+    SHOW DATABASES;
+#create database
+    CREATE DATABASE db_name;
+#In above database create table
+	CREATE TABLE table_name(
+		id int unsigned not null AUTO_INCREMENT,
+		name varchar(10) NOT null,
+		PRIMARY key(id)
+	);
+#show table in a particular table
+    SHOW TABLES;
+#show columns of table
+    SHOW COLUMNS FROM table_name;
+#select all from table
+    SELECT * FROM table_name;
+#select particular fields
+    SELECT first_name FROM books;
+    SELECT last_name FROM books;
+	OR
+    SELECT first_name,last_name FROM table_name;
+#select on condition
+    SELECT first_name,last_name FROM `books` WHERE id = 2; //use '' for string value
+#operator in select operation
+ for range by where use between and
+    SELECT first_name,last_name FROM `books` WHERE id BETWEEN 2 AND 4;
+ multiple where by using and
+    select first_name FROM books WHERE last_name='yadav' AND id=1; 
+#DISTINCT=for unique or non repeated
+	SELECT DISTINCT first_name,last_name FROM table_name;
+#LIMIT
+(COUNT)
+    SELECT first_name,last_name FROM books LIMIT 3;
+(OFFSET,COUNT)
+    SELECT first_name,last_name FROM books LIMIT 2,3;	
+#SORT
+    SELECT first_name,last_name FROM books ORDER BY first_name ASC; //FOR ASCENDING
+    SELECT first_name,last_name FROM books ORDER BY first_name DESC; //FOR DESCENDING
+#USE SORT AND LIMIT
+    SELECT first_name,last_name FROM books  ORDER BY first_name LIMIT 5;
+#FULLY QUALIFIED NAME
+    SELECT books.first_name FROM books;
+#WILDCARD CHARACTER WITH LIKE OPERATOR
+    The percentage ( % ) wildcard allows you to match any string of zero or more characters.
+    The underscore ( _ ) wildcard allows you to match any single character.
+#CREATE CUSTOM COLUMNS USING ALIAS 
+    SELECT CONCAT(first_name,',',last_name) AS NEW_FIELD FROM books;
+	or
+	SELECT first_name,last_name,price,price-1 as new_field FROM `books`;
+
+	

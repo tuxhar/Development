@@ -1,0 +1,187 @@
+It stands for Javascript Object Notation
+JSON is a text file written with Javascript Object Notation
+It is used to store and exchange human readable data with the server
+Note=>1)json filename has the extention .json
+	  2)It is not a programmimg language
+	  3)language independent = we can use any language to read and write JSON file
+	  4)Internet media type="application/json"
+
+#json object is same as javascript object except it has a string key
+	var data = {
+			"name" : "tushar",
+			"age" : 24,
+		};	
+
+#we can access json object value by using . and [] same as javascript
+    document.write(data.name);
+    document.write(data['age']);
+
+#change the value of attribute of json object
+		data.name="acharya";
+		document.write(data.name);
+
+#json support data types and access them
+var data={
+		"name":"tushar",                       //string
+		"height":165,                         //number			
+		"color":["red","green","blue"],      //array
+		"condition":true,                   //boolean
+		"friends":{                        //json object
+				"pune":"irfan",
+				"nagpur":"nagpur",
+				"hyd":"umesh",
+		}
+};
+
+		document.write(data.name);
+		document.write(data.height);
+		document.write(data.color[1]);
+		document.write(data.condition);
+		document.write(data.friends.hyd);
+
+#write in for loop
+note:-access with array in for loop
+		for(key in data){
+			document.write(data[key]+"<br>")
+		}
+
+#how do we access array and object by using for loop
+		var data={
+			"color":["green","yellow","blue"],
+			"friends":[
+				   {"name":"tushar","age":24},
+				   {"name":"acharya","age":25}
+			],
+		};
+array=>
+for(key in data.color){
+  document.write(data.color[key]+"<br>");
+}
+OR
+for(key=0; key<data.color.length; key++){
+	document.write(data.color[key]+"<br>");
+}
+OR
+document.write(data.color[1]);
+
+array of object=>
+	for(key in data.friends){
+		for(inner_key in data.friends[key]){
+	 document.write(data.friends[key][inner_key]+"<br>");
+	}
+OR
+document.write(data.friends[1]['name']);
+
+#JSON.stringify(data);
+It converts from json object to json string 
+Note:=> whenever we need to send data to server it is in a text format
+
+#JSON.parse(data2);
+It converts json string to json object
+example=>
+var data2='{"name:"tushar","number":8087111756}';
+
+var obj=JSON.parse(data2);
+
+now we can access it as a object attribute
+document.write(obj.name);
+
+#json_encode(data);
+it converts php to json
+
+#json_decode(data);
+it converts json to php
+
+#send json data from demo.json file to other php file
+IN JSON file =>
+   [
+  {
+    "name": "Harry Potter",
+    "wand": [
+      {
+        "core": "phoenix feather",
+        "length": "11 inches",
+        "wood": "holly"
+      }
+    ]
+  },
+  {
+    "name": "Hermione Granger",
+    "wand": [
+      {
+        "core": "dragon heartstring",
+        "length": "10 and 3/4 inches",
+        "wood": "vine"
+      }
+    ]
+  }
+]
+
+IN php file =>
+<?php
+
+$url = 'demo.json';  // path to your JSON file
+$data = file_get_contents($url); // put the contents of the file into a variable
+$wizards = json_decode($data, true); // decode the JSON feed true means in associative array 
+
+foreach ($wizards as $wizard) {
+  echo $wizard['name'] . '\'s wand is ' . 
+       $wizard['wand'][0]['wood'] . ', ' . 
+       $wizard['wand'][0]['length'] . ', with a ' . 
+       $wizard['wand'][0]['core'] . ' core. <br>' ;
+}
+                OR
+	<script>			
+var data={
+		"name" : "tushar",
+		"age" : 24,
+		"condition" : true,
+		"access" : ["laptop","mobile","router"],
+		"friends":[
+				   {"name":"tushar","age":24},
+				   {"name":"acharya","age":25}
+			],
+	};
+   result = JSON.stringify(data);
+   window.location="demo.php?data="+result;
+   </script>
+In demo.php   
+   <?php
+   $x = json_decode($_GET(data));
+   echo $x->name;
+   ?>
+	
+#check whether json response is string or object
+var response=jQuery.parseJSON('response from server');
+if(typeof response =='object')
+{
+  // It is JSON object
+}
+else
+{
+  if(response ===false)
+  {
+     // the response was a string "false", parseJSON will convert it to boolean false
+  }
+  else
+  {
+    // the response was something else
+  }
+}
+
+#Dynamic document json file statically
+NOTE:=>write all json data in an associative array
+		<?php
+		header("Content-Type:application/json; charset=UTF-8");
+		$data=array(
+		"name" => "tushar",
+		"surname" => "acharya",
+		"city" =>"nagpur",
+		);
+
+		echo json_encode($data);
+
+		?>	
+
+
+

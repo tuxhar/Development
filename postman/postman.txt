@@ -1,0 +1,31 @@
+#postman is an API client 
+to develop,test,share,document apis.
+
+#collection = group of api request
+#we can run script in collection level,folder level and script level by using tests/pre-request-script
+#define variable by using this {{}}
+#variable = element to store data
+we can set value and key of a variable in collection as well as in environment. 
+ *get a varibale=> 
+	 let variable_store = pm.variables.get("variable_key");  //for local variable
+	 let global_variable = pm.globals.get("variable_key");   //for global variable
+	 let env_variable = pm.environment.get("variable_key");  //for Environment variable
+ 
+ *set a variable=>
+	 pm.variables.set("name","tushar");    //for local variable
+	 pm.globals.set("name","tushar");      //for global variable
+	 pm.environment.set("name","tushar");  //for Environment variable
+#how to debug in postman	 
+		console.log();
+		console.info();
+		console.warn();
+		console.error();
+#how to run from command line
+//check that you have node.js installed or not by using node -v OR nmp -v in command prompt
+     1)install node.js for newman		
+	 2)install newman by giving command (npm install -g newman)
+	 3)export collection as json file
+	 4)go to export file location in cmd
+	 5)write newman run filename.json
+	 *NEWMAN is a command line collection runner for postman
+	 write newman run -h for options in newman

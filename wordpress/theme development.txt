@@ -1,0 +1,50 @@
+for documentation go to https://developer.wordpress.org/
+make a folder name as theme name in C:\xampp\htdocs\wordpress\wp-content\themes
+#Standard Theme files and folders
+	1)index.php  //main template
+	2)style.css
+	3)search.php
+	4)single.php  //to display single post
+	5)page.php  //to display pages
+	6)404.php
+	7)archive.php  //to display 
+	8)header.php
+	9)footer.php
+	10)sidebar.php
+	11)comments.php
+	12)functions.php  //to control theme which is a mini plugin
+	13)assets folder  //contain all styling and js files
+	14)template-parts folder //it contains template part ass name suggest
+	15)inc folder  //contains functions.php
+
+#Required files
+	1)style.css
+	2)index.php
+	
+you have to add metadata in style.css to activate it
+it should be in multi line comment,case-insensetive and optional
+	/*
+	Theme Name: Twenty Seventeen
+	Theme URI: https://wordpress.org/themes/twentyseventeen/
+	Author: the WordPress team
+	Author URI: https://wordpress.org/
+	Description: Twenty Seventeen brings your site to life with immersive featured images and subtle animations. With a focus on business sites, it features multiple sections on the front page as well as widgets, navigation and social menus, a logo, and more. Personalize its asymmetrical grid with a custom color scheme and showcase your multimedia content with post formats. Our default theme for 2017 works great in many languages, for any abilities, and on any device.
+	Version: 1.0
+	License: GNU General Public License v2 or later
+	License URI: http://www.gnu.org/licenses/gpl-2.0.html
+	Text Domain: twentyseventeen
+	Tags: one-column, two-columns, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
+	This theme, like WordPress, is licensed under the GPL.
+	Use it to make something cool, have fun, and share what you've learned with others.
+	*/
+
+#syntax to include other file in index.php
+	<?php get_header(); ?>
+	   body
+	<?php get_sidebar(); ?>
+	<?php get_footer(); ?>	
+Note:you have to include header/footer in all files except functions.php & sidebar.php
+
+#make title dynamic for each page 
+
+

@@ -1,0 +1,96 @@
+What is Twitter Bootstrap=>It is a open-source framework of html,css and javascript.
+it is used to create responsive mobile first website.
+
+Note =>if you dont wanna use bootstrap class use !important in it.
+e.g=>style="color:red !important;"
+
+
+###########How to download it##########
+there are two version minified and unminified
+minified version is unorganized but less in size
+unminified version is organized but more in size
+
+###########META TAG#############
+   <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit">
+############CONTAINER##############for layout#####
+	It is used to create box content
+	container=>for fixed width
+	container-fluid=>for full width(nominal margin in right and left side)
+E.G=<div class="container">
+    </div>
+############GRID SYSTEM####################
+	we can maximum divide a row in 12 column
+	grid classes/breakpoint=>there are total 5 grid classes
+	xs=>extra small //for mobile
+	sm=>small      //for tablet
+	md=>medium      //for desktop
+	lg=>large       //for large desktop
+	xl=>extra large  //for extra large
+	
+E.G=<div class="container-fluid">
+      <div class="row">
+	     <div class="col-xs-3">
+		    <p>dfg</p>
+		 </div>
+		 <div class="col-xs-6">
+		    <p>hjgh</p>
+		 </div>
+		 <div class="col-xs-3">
+		    <p>fgf</p>
+		 </div>
+	  </div>
+   </div>
+
+Note=>always write grid system in a container or it will show you horizontally bar.
+#####################TEXT FORMATTING####################
+<blockquote class="blockquote">
+<P>Tom Campbell in <cite>My Big Toe</cite></P>
+</blockquote>
+
+##########TEXT COLOR##########
+	text-success->positive
+	text-danger->negative
+	text-warning
+	text-primary->most imp
+	text-secondary->least imp
+	text-info->neutral
+	text-dark
+	text-light
+	text-white
+	text-muted
+
+Note=>light and white color are almost same
+
+#########TaBLES#########
+
+contextual classess=>
+	table-hover=for hovering effect
+	table-bordered
+	table-borderless
+	table-condensed=remove extra padding and margin
+	table-striped
+	table-sm =for small table
+	table-sm-responsive=for responsive
+	table-dark
+
+E.G=<table class="table">
+     <thead>
+       <tr>
+	    <th>Sr No</th>
+        <th>Color</th>
+        <th>Fruit</th>		
+	   </tr>
+	 </thead> 
+	 <tbody>
+	   <tr>
+	    <td>1</td>
+		<td>red</td>
+		<td>tomato</td>
+	   </tr>
+	   <tr>
+	    <td>2</td>
+		<td>yellow</td>
+		<td>mango</td>
+	   </tr>
+	 </tbody>
+   </table>

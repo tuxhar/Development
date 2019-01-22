@@ -1,0 +1,17 @@
+Object in general sense = It is thing that we can see Or touch
+  It has characteristic and action that it can perform
+Similarly In programming world
+
+There are two types of Objects
+1)In Build that we can access its methos by using . operator
+2)that we can create 
+for in loop => by using this loop we can access the property of an object one by one
+note:-access with array in for loop
+var obj = {
+  "name" : "tushar",
+  "city" : "nagpur",
+  "weight" : 50,
+};
+   for(key in obj){
+    document.write(obj[key]+ "<br/>");
+   }
